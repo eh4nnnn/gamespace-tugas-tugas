@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwf8shv67f3qi"]
+
+[ext_resource type="Texture2D" uid="uid://6ia30lw71s37" path="res://assets/2d/platformer pack/Enemies/slime_block_walk_a.svg" id="1_c2c0j"]
+[ext_resource type="Script" uid="uid://cfbjmvaory4k" path="res://week 2 - interaction system & inventory logic/2d/area detection/enemy.gd" id="1_kxb78"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxb78"]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgg65"]
+radius = 39.051247
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1687395995]
+script = ExtResource("1_kxb78")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=915801869]
+texture = ExtResource("1_c2c0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850518628]
+shape = SubResource("CircleShape2D_kxb78")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=598764262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=722725555]
+shape = SubResource("CircleShape2D_kgg65")

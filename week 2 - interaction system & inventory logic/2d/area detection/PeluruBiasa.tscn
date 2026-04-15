@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bahyop1ce31qn"]
+
+[ext_resource type="Script" uid="uid://bxbu2atrd6bia" path="res://week 2 - interaction system & inventory logic/2d/area detection/peluru_biasa.gd" id="1_uw2nv"]
+[ext_resource type="Texture2D" uid="uid://c04k2hs0mq6gv" path="res://assets/2d/platformer pack/Tiles/heart.svg" id="2_4tf51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5j2j"]
+radius = 36.345562
+
+[node name="PeluruBiasa" type="Area2D" unique_id=937754253]
+script = ExtResource("1_uw2nv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=249084492]
+position = Vector2(1.000001, 3.000002)
+scale = Vector2(1, 0.9)
+texture = ExtResource("2_4tf51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462970424]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_h5j2j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1111026102]
+position = Vector2(-90, -33)
+rect = Rect2(48.59999, -6, 81.40001, 81.799995)
+
+[node name="Timer" type="Timer" parent="." unique_id=707511844]
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

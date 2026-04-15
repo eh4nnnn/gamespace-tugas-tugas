@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c50me1tsasdl0" path="res://week 1 - movement & feel/2d/Player2D.gd" id="1_tfhl7"]
 [ext_resource type="Texture2D" uid="uid://bmywpyxw3hjgj" path="res://assets/2d/platformer pack/Characters/character_purple_hit.svg" id="2_28pge"]
+[ext_resource type="PackedScene" uid="uid://bahyop1ce31qn" path="res://week 2 - interaction system & inventory logic/2d/area detection/PeluruBiasa.tscn" id="2_62fc6"]
 [ext_resource type="Texture2D" uid="uid://vs0rvrfwverk" path="res://assets/2d/platformer pack/Characters/character_purple_front.svg" id="3_62fc6"]
+[ext_resource type="PackedScene" uid="uid://vsgs8mag1gvg" path="res://week 2 - interaction system & inventory logic/2d/area detection/PeluruApi.tscn" id="3_kvjvd"]
 [ext_resource type="Texture2D" uid="uid://fo5cpby21s0v" path="res://assets/2d/platformer pack/Characters/character_purple_jump.svg" id="4_kvjvd"]
 [ext_resource type="Texture2D" uid="uid://chawdvikvpue4" path="res://assets/2d/platformer pack/Characters/character_purple_idle.svg" id="5_slob3"]
 [ext_resource type="Texture2D" uid="uid://chydx0ntk35a7" path="res://assets/2d/platformer pack/Characters/character_purple_walk_a.svg" id="6_6b0n7"]
@@ -53,7 +55,7 @@ animations = [{
 radius = 43.0
 height = 92.0
 
-[node name="Player" type="CharacterBody2D" unique_id=995696200 node_paths=PackedStringArray("animation")]
+[node name="Player" type="CharacterBody2D" unique_id=995696200 node_paths=PackedStringArray("animation", "muzzle")]
 script = ExtResource("1_tfhl7")
 animation = NodePath("Animation")
 move_speed = 320.0
@@ -61,6 +63,9 @@ jump_force = 500.0
 friction = 80.0
 acceleration = 10.0
 jump_buffer = 0.1
+scene_peluru_biasa = ExtResource("2_62fc6")
+scene_peluru_api = ExtResource("3_kvjvd")
+muzzle = NodePath("Muzzle")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=42108993]
 position = Vector2(0, -64)
@@ -76,3 +81,6 @@ offset = Vector2(0, -120)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=32245840]
+position = Vector2(73, -46)

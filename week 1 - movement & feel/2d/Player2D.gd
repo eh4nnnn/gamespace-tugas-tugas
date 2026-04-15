@@ -19,6 +19,13 @@ extends CharacterBody2D
 @export var jump_buffer: float = 0.2
 @export var double_tap_time: float = 0.25
 
+@export_group("Shooting System")
+@export var scene_peluru_biasa: PackedScene
+@export var scene_peluru_api: PackedScene
+@export var muzzle: Marker2D # Jangan lupa hubungkan node Muzzle di Inspector!
+
+var _daftar_peluru: Array = []
+var _indeks_peluru_aktif: int = 0
 
 var _direction: float = 0
 var _coyote_timer: float = 0
@@ -29,7 +36,9 @@ var _last_right_tap: float = 0
 
 var _is_running: bool = false
 
-
+func _ready() -> void:
+	_daftar_peluru = [scene_peluru_biasa, scene_peluru_api]
+	
 func _process(_delta: float) -> void:
 	_animation()
 
@@ -50,6 +59,10 @@ func _physics_process(delta: float) -> void:
 	_jump_buffer_timer -= delta
 
 	_check_double_tap()
+		
+	if Input.is_action_just_pressed("tembak"):
+		_tembak()
+	# --------------------------
 
 	_move()
 	_jump()
@@ -132,5 +145,34 @@ func _facing_direction() -> void:
 
 	if _direction > 0:
 		animation.flip_h = false
+		if muzzle != null:
+			muzzle.position.x = abs(muzzle.position.x) 
+			
 	elif _direction < 0:
 		animation.flip_h = true
+		if muzzle != null:
+			muzzle.position.x = -abs(muzzle.position.x)
+
+func _tembak() -> void:
+	if _daftar_peluru.is_empty() or _daftar_peluru[_indeks_peluru_aktif] == null or muzzle == null:
+		print("ERROR: Array peluru kosong!")
+		return
+
+	var peluru_baru = _daftar_peluru[_indeks_peluru_aktif].instantiate()
+	
+	var arah_tembakan = Vector2.LEFT if animation.flip_h else Vector2.RIGHT
+	
+	if "arah" in peluru_baru:
+		peluru_baru.arah = arah_tembakan
+		
+		if arah_tembakan == Vector2.LEFT:
+			peluru_baru.scale.x = -1 
+
+	peluru_baru.global_position = muzzle.global_position
+	
+	_indeks_peluru_aktif += 1
+	
+	if _indeks_peluru_aktif >= _daftar_peluru.size():
+		_indeks_peluru_aktif = 0
+	
+	get_tree().current_scene.add_child(peluru_baru)

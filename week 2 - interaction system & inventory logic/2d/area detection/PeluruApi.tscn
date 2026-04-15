@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://vsgs8mag1gvg"]
+
+[ext_resource type="Script" uid="uid://d1awqon148k68" path="res://week 2 - interaction system & inventory logic/2d/area detection/peluru_api.gd" id="1_uifp8"]
+[ext_resource type="Texture2D" uid="uid://bi31ia5efsvok" path="res://assets/2d/platformer pack/Tiles/fireball.svg" id="2_fxiwh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sthg"]
+radius = 52.03845
+
+[node name="PeluruApi" type="Area2D" unique_id=270226018]
+script = ExtResource("1_uifp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=327261462]
+shape = SubResource("CircleShape2D_5sthg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=431366105]
+modulate = Color(0.7607843, 0.30980393, 0, 1)
+position = Vector2(-1, 4.000004)
+scale = Vector2(1, 0.899)
+texture = ExtResource("2_fxiwh")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=817257823]
+position = Vector2(-8, -18)
+rect = Rect2(-48, -40, 112, 114)
+
+[node name="Timer" type="Timer" parent="." unique_id=922654795]
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

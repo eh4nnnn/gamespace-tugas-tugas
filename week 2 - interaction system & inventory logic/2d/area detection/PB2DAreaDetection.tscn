@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dcn0yhs82gngm" path="res://week 2 - interaction system & inventory logic/2d/area detection/Player2DAD.tscn" id="4_orpu5"]
 [ext_resource type="PackedScene" uid="uid://dypq4q8syio0p" path="res://week 2 - interaction system & inventory logic/interactable item/Item/SilverCoin.tscn" id="4_toyva"]
 [ext_resource type="PackedScene" uid="uid://c7nhe4fqyjv3p" path="res://week 2 - interaction system & inventory logic/UICoin.tscn" id="5_orpu5"]
+[ext_resource type="PackedScene" uid="uid://bwf8shv67f3qi" path="res://week 2 - interaction system & inventory logic/2d/area detection/Enemy.tscn" id="7_hktms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_038p0"]
 texture = ExtResource("1_urhs7")
@@ -893,3 +894,6 @@ jump_mult = 1.2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1541625440]
 
 [node name="UiCoin" parent="CanvasLayer" unique_id=183794922 instance=ExtResource("5_orpu5")]
+
+[node name="Enemy" parent="." unique_id=1687395995 instance=ExtResource("7_hktms")]
+position = Vector2(-52, 161)
