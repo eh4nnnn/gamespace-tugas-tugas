@@ -4,10 +4,16 @@
 [ext_resource type="Script" uid="uid://cfbjmvaory4k" path="res://week 2 - interaction system & inventory logic/2d/area detection/enemy.gd" id="1_kxb78"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxb78"]
-radius = 38.0
+radius = 29.732138
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kgg65"]
-radius = 39.051247
+radius = 29.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxb78"]
+bg_color = Color(0.24115604, 0.24115607, 0.24115595, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgg65"]
+bg_color = Color(0.972549, 0, 0.09803922, 1)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1687395995]
 script = ExtResource("1_kxb78")
@@ -16,9 +22,22 @@ script = ExtResource("1_kxb78")
 texture = ExtResource("1_c2c0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1850518628]
+position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_kxb78")
 
 [node name="HitBox" type="Area2D" parent="." unique_id=598764262]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=722725555]
+position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_kgg65")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1245737211]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=940221635]
+offset_left = -34.0
+offset_top = -39.0
+offset_right = 37.0
+offset_bottom = -27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kxb78")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kgg65")
+show_percentage = false

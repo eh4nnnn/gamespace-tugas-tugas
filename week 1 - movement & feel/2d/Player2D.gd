@@ -22,7 +22,7 @@ extends CharacterBody2D
 @export_group("Shooting System")
 @export var scene_peluru_biasa: PackedScene
 @export var scene_peluru_api: PackedScene
-@export var muzzle: Marker2D # Jangan lupa hubungkan node Muzzle di Inspector!
+@export var muzzle: Marker2D
 
 var _daftar_peluru: Array = []
 var _indeks_peluru_aktif: int = 0
@@ -159,7 +159,6 @@ func _tembak() -> void:
 		return
 
 	var peluru_baru = _daftar_peluru[_indeks_peluru_aktif].instantiate()
-	
 	var arah_tembakan = Vector2.LEFT if animation.flip_h else Vector2.RIGHT
 	
 	if "arah" in peluru_baru:

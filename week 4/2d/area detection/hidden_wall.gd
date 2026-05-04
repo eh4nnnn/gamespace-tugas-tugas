@@ -9,7 +9,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var tween = create_tween()
 		tween.tween_property(visual, "modulate:a", 0.3, 0.5)
 		
-
 		static_collision.set_deferred("disabled", true)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
