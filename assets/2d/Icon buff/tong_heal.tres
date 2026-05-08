@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://q6q6ynrp3qx2"]
+
+[ext_resource type="Texture2D" uid="uid://b0wbffubrc0p" path="res://assets/2d/Icon buff/barrel.png" id="1_g8d71"]
+
+[resource]
+atlas = ExtResource("1_g8d71")
+region = Rect2(373.08307, 336.84332, 32.842133, 42.17227)

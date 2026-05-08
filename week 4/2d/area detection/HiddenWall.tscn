@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwt26lyhbg0fh"]
 
-[ext_resource type="Script" uid="uid://bmqbw5u5tsy6x" path="res://week 2 - interaction system & inventory logic/2d/area detection/hidden_wall.gd" id="1_8lkde"]
+[ext_resource type="Script" uid="uid://bmqbw5u5tsy6x" path="res://week 4/2d/area detection/hidden_wall.gd" id="1_8lkde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sv3fk"]
 size = Vector2(128, 127)

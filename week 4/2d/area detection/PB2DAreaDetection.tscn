@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://78lu1acphucj" path="res://assets/2d/platformer pack/BackgroundTilemap.png" id="1_urhs7"]
 [ext_resource type="Texture2D" uid="uid://bvlaxw21uwi6m" path="res://assets/2d/platformer pack/tilemap.png" id="2_cm1m4"]
-[ext_resource type="PackedScene" uid="uid://dwt26lyhbg0fh" path="res://week 2 - interaction system & inventory logic/2d/area detection/HiddenWall.tscn" id="3_7v2y0"]
-[ext_resource type="PackedScene" uid="uid://dcn0yhs82gngm" path="res://week 2 - interaction system & inventory logic/2d/area detection/Player2DAD.tscn" id="4_orpu5"]
-[ext_resource type="PackedScene" uid="uid://dypq4q8syio0p" path="res://week 2 - interaction system & inventory logic/interactable item/Item/SilverCoin.tscn" id="4_toyva"]
-[ext_resource type="PackedScene" uid="uid://c7nhe4fqyjv3p" path="res://week 2 - interaction system & inventory logic/UICoin.tscn" id="5_orpu5"]
-[ext_resource type="PackedScene" uid="uid://bwf8shv67f3qi" path="res://week 2 - interaction system & inventory logic/2d/area detection/Enemy.tscn" id="7_hktms"]
+[ext_resource type="PackedScene" uid="uid://dwt26lyhbg0fh" path="res://week 4/2d/area detection/HiddenWall.tscn" id="3_7v2y0"]
+[ext_resource type="PackedScene" uid="uid://dcn0yhs82gngm" path="res://week 4/2d/area detection/Player2DAD.tscn" id="4_orpu5"]
+[ext_resource type="PackedScene" uid="uid://dypq4q8syio0p" path="res://week 4/interactable item/Item/SilverCoin.tscn" id="4_toyva"]
+[ext_resource type="PackedScene" uid="uid://c7nhe4fqyjv3p" path="res://week 4/UICoin.tscn" id="5_orpu5"]
+[ext_resource type="PackedScene" uid="uid://bwf8shv67f3qi" path="res://week 4/2d/area detection/Enemy.tscn" id="7_hktms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_038p0"]
 texture = ExtResource("1_urhs7")

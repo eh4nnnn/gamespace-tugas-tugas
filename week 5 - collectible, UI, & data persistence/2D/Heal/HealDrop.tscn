@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bux0w3xkis45"]
+
+[ext_resource type="Script" uid="uid://dshv0wqtymofd" path="res://week 5 - collectible, UI, & data persistence/2D/Heal/HealDrop.gd" id="1_2sypo"]
+[ext_resource type="Texture2D" uid="uid://bhtbthmvdukjn" path="res://assets/2d/Icon buff/potion_heal.png" id="1_bv3me"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sypo"]
+radius = 29.068884
+
+[node name="HealDrop" type="Area2D" unique_id=1783972008]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_2sypo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2057384736]
+scale = Vector2(2, 2)
+texture = ExtResource("1_bv3me")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=167793520]
+shape = SubResource("CircleShape2D_2sypo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=858387619]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -32,9 +32,6 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.flip_h = velocity.x < 0 
 		else:
 			nav_agent.target_position = player_target.global_position
-
-			if nav_agent.is_target_reachable() == false:
-				print("BUNTU! AI tidak melihat ada jalan ke Player.")
 			
 			var titik_selanjutnya = nav_agent.get_next_path_position()
 			var arah_x = sign(titik_selanjutnya.x - global_position.x)
